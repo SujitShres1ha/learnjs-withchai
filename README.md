@@ -1,2 +1,2 @@
 # learnjs-withchai
-Code repo for JS series at Chai aur Code
+Code repo for JS series 
