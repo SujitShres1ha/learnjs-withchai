@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul class = 'list'>
+        <li>Python</li>
+    </ul>
+</body>
+<script>
+    function addList(lang){
+    const li = document.createElement('li')
+    li.innerHTML=lang
+    document.querySelector('.list').appendChild(li)
+    }
+    addList("JavaScript")
+    
+    function addOptList(lang){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.list').append(li)
+    }
+    addList("C")
+    
+    //EDIT
+    const first = document.querySelector("li:first-child")
+    // const newLang = document.createElement('li')
+    // newLang.innerHTML = 'TypeScript'
+    // first.replaceWith(newLang)
+
+    first.outerHTML='<li>Java</li>'
+
+    //delete
+    const last = document.querySelector("li:last-child")
+    last.remove()
+
+
+</script>
+</html>
