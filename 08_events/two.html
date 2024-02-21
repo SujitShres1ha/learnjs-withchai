@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async JS</title>
+</head>
+<body>
+    <h1>Programming with JS</h1>
+    <button id="stop">Stop</button>
+    <script>
+        function changeHeading(){
+            document.querySelector('h1').innerHTML = 'Programming with Python'
+            console.log('changed')
+        }
+        const x = setTimeout(changeHeading,2000)
+        
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearTimeout(x)
+            console.log('stopped')
+        })
+    </script>
+</body>
+</html>

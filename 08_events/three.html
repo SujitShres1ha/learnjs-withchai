@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SETTIMEOUT</title>
+</head>
+<body>
+    <h1>Chai aur JS</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+        let x
+        function printDate(){
+            let date = new Date()
+            console.log(date.toLocaleTimeString())
+        }
+        document.querySelector('#stop').addEventListener('click',stopDate)
+        document.querySelector('#start').addEventListener('click',function(){
+            x = setInterval(printDate,1000)})
+        function stopDate(){
+            clearInterval(x)
+            console.log('Stopped')
+        }
+
+    </script>
+</body>
+</html>
