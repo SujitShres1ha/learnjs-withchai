@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API REQUEST</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const xhr = new XMLHttpRequest()
+
+    xhr.open('GET', 'https://api.github.com/users/hiteshchoudhary')
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState)
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(xhr.responseText)
+            const img = data.avatar_url
+            const nme = data.name;            
+
+            const card = document.createElement('div')
+            card.className = 'card'
+            
+            const image = document.createElement('img')
+            image.src = img
+            card.appendChild(image)
+     
+            const name = document.createElement('p')
+            name.style.textIndent = '150px'
+            name.style.color = 'green'
+            
+            name.textContent = nme
+            card.appendChild(name)
+
+            document.body.appendChild(card)
+            document.body.style.backgroundColor = 'orange'
+        }
+    }
+
+    xhr.send()
+</script>
+</html>
