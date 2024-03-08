@@ -5,7 +5,7 @@
 
 // console.log(add(1,2))
 // console.log(add.count)
-// console.log(add.prototype)
+// console.log(add.proto  type)
 
 function fullName(fname,lname){
     this.fname = fname
