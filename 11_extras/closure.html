@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lexical Scoping</title>
+</head>
+<body>
+    <button id="blue">Blue</button>
+    <button id="yellow">Yellow</button>
+</body>
+<script>
+    function clickHandler(color){
+        return function(){document.body.style.backgroundColor = color}
+    }
+    document.getElementById('blue').onclick = clickHandler('blue')
+    document.getElementById('yellow').onclick = clickHandler('yellow')
+</script>
+</html>
+
+<!-- a closure retains access to the outer function's variables even after the outer function has returned. This is possible because of how JavaScript handles memory and garbage collection. When a function returns, its local variables are not immediately discarded. Instead, they remain in memory as long as there's a closure that references them. -->
